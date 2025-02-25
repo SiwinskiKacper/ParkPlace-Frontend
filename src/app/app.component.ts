@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { DisplayParkSpotsComponent } from './display-park-spots/display-park-spots.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [DisplayParkSpotsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  
-}
+export class AppComponent {}

@@ -1,0 +1,21 @@
+<div class="container">
+    <h1 style="text-align: center;">Parking Spots</h1>
+    <div class="parking-grid">
+        @for (spot of ParkingSpots; track spot)
+        {
+            <div class='spot {{ GetAvailabilityString(spot) }}'>
+                <h3>Spot #{{spot.zone}}{{spot.number}}</h3>
+                @if (spot.available)
+                {
+                    <div class="status">Reserved</div>
+                    <a href="#" class="btn">Cancel</a>
+                }
+                @else
+                {
+                    <div class="status">Available</div>
+                    <a href="#" class="btn">Reserve</a>
+                }
+            </div>
+        }
+    </div>
+</div>
