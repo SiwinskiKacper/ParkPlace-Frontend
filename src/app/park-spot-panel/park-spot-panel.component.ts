@@ -1,5 +1,5 @@
-import { Component, Input, Inject } from '@angular/core';
-import { ParkingSpot} from '../parking-spots-data.service';
+import { Component, Input } from '@angular/core';
+import { ParkingSpot } from '../models/parking-spot';
 
 @Component({
   selector: 'app-park-spot-panel',

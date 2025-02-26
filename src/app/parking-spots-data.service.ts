@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-
-export interface ParkingSpot {
-  id: number;  zone: string; floor: number; number: number; available: boolean;
-}
+import { ParkingSpot } from './models/parking-spot';
 
 @Injectable({
   providedIn: 'root'
