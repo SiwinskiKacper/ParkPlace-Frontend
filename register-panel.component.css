@@ -1,0 +1,17 @@
+h2{
+text-align: left;
+color: white;
+font-weight: bold;
+font-family: 'Times New Roman';
+}
+#Rejestracja{
+    text-align: left;
+    font-family: 'Times New Roman';
+    background: linear-gradient(to right, #747c86, #8b95b5);
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+  
+}
