@@ -4,10 +4,9 @@ import { RouterModule } from '@angular/router';
 import { RegisterPanelComponent } from './register-panel/register-panel.component';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
-  providers: [
-      provideRouter(routes),  
-    
-  ]
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes), provideHttpClient()],
 };

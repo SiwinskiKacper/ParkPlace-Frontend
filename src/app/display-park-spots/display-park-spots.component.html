@@ -1,7 +1,7 @@
 <div class="container">
     <h1 style="text-align: center;">Parking Spots</h1>
     <div class="parking-grid">
-        @for (spot of ParkingSpots; track spot)
+        @for (spot of parking_service_spot; track spot)
         {
             <app-park-spot-panel [spot]="spot"></app-park-spot-panel>
         }
