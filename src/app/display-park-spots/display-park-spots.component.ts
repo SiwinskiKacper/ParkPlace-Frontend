@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ParkSpotPanelComponent } from '../park-spot-panel/park-spot-panel.component';
-import { ParkingSpotsDataService } from '../parking-spots-data.service';
+import { ParkingService } from '../parking.service';
+import { ParkingSpot } from '../models/parking-spot';
 
 @Component({
   selector: 'app-display-park-spots',
@@ -9,5 +10,10 @@ import { ParkingSpotsDataService } from '../parking-spots-data.service';
   imports: [ParkSpotPanelComponent]
 })
 export class DisplayParkSpotsComponent {
-  ParkingSpots = ParkingSpotsDataService.getAllParkingSpots();
-}
+  parking_service: ParkingService = inject(ParkingService);
+  parking_service_spot: ParkingSpot[] = [];
+  constructor() {
+    this.parking_service.getAllParkingSpots().subscribe((data) => {
+      this.parking_service_spot = data;
+  });
+}}

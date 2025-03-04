@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { DisplayParkSpotsComponent } from './display-park-spots/display-park-spots.component';
+import { ParkingService } from './parking.service';
+import { ParkingSpot } from './models/parking-spot';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { DisplayParkSpotsComponent } from './display-park-spots/display-park-spo
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor() {}
+}
