@@ -1,1 +1,50 @@
-<app-display-park-spots></app-display-park-spots>
+<nav class="navbar navbar-light sticky-top bg-light flex-md-nowrap p-0">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+    <input class="form-control form-control-light w-100" type="text" placeholder="Search spot"
+        aria-label="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign out</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+            <a href="/"
+                class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                <svg class="bi pe-none me-2" width="30" height="24">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <span class="fs-5 fw-semibold">Collapsible</span>
+            </a>
+            <ul class="list-unstyled ps-0">
+                <li class="mb-1">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                      Home
+                    </button>
+                    <div class="collapse show" id="home-collapse" style="">
+                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Updates</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Reports</a></li>
+                      </ul>
+                    </div>
+                  </li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+    
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+    
+                    <div class="table-responsive"></div>
+                </div>
+                <app-display-park-spots></app-display-park-spots>
+    
+            </main>
+        </div>
