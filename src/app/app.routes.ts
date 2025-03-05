@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { RegisterPanelComponent } from './register-panel/register-panel.component';
-import { DisplayParkSpotsComponent } from './display-park-spots/display-park-spots.component';
+import { ReservationDashboardComponent } from './reservation-dashboard/reservation-dashboard.component';
 
 export const routes: Routes = [
   { path: '', component: RegisterPanelComponent },
-  { path: 'reservation', component: DisplayParkSpotsComponent }
+  { path: 'reservation', component: ReservationDashboardComponent }
 ];
