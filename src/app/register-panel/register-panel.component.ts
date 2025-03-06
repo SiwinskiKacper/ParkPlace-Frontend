@@ -15,6 +15,6 @@ export class RegisterPanelComponent {
   constructor(private router: Router) {}
 
   onSubmit() {
-    this.router.navigate(['/reservation']);
+    this.router.navigate(['/dashboard']);
   }
 }

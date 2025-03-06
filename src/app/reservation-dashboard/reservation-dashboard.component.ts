@@ -8,5 +8,5 @@ import { DisplayParkSpotsComponent } from '../display-park-spots/display-park-sp
   styleUrl: './reservation-dashboard.component.css'
 })
 export class ReservationDashboardComponent {
-
+  
 }
