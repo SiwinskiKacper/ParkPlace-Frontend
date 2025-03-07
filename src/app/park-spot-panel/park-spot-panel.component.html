@@ -3,11 +3,11 @@
     @if (spot.available)
     {
         <div class="status">Reserved</div>
-        <a href="#" class="btn">Cancel</a>
+        <a class="btn">Cancel</a>
     }
     @else
     {
         <div class="status">Available</div>
-        <a href="#" class="btn" (click)="ReserveSpot(spot)">Reserve</a>
+        <a class="btn" (click)="ReserveSpot(spot)">Reserve</a>
     }
 </div>

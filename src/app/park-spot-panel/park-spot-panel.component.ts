@@ -13,7 +13,8 @@ export class ParkSpotPanelComponent {
   constructor(private router: Router) {}
   
   ReserveSpot(spot: ParkingSpot) {
-    this.router.navigate(['/reservation']);
+    console.log('Reserving spot: ' + spot.id);
+    this.router.navigate(['/reservation'], { queryParams: {spotId: spot.id} });
   }
 
   GetAvailabilityString(spot: ParkingSpot) {

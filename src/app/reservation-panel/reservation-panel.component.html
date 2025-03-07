@@ -1,7 +1,18 @@
-<!-- <mat-form-field>
-    <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field> -->
+<div class="content">
+    <h1>Reserve a spot #</h1>
+    <div class="cs-form" style="width: 50%; margin: 0 auto;">
+        <p>Reservation time start</p>
+        <input type="time" class="form-control" value="10:05 AM"/>
+    </div>
+    <div class="cs-form" style="width: 50%; margin: 0 auto;">
+        <p>Reservation time end</p>
+        <input type="time" class="form-control" value="10:05 AM"/>
+    </div>
+
+    <div class="cs-form" style="width: 50%; margin: 0 auto;">
+        <p>Reservation date</p>
+        <input type="date" class="form-control" value="2021-06-01"/>
+    </div>
+    <br>
+    <a class="btn" (click)="ReserveSpot()">Reserve</a>
+</div>

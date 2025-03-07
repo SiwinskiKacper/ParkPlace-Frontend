@@ -4,7 +4,7 @@ import { ReservationDashboardComponent } from './reservation-dashboard/reservati
 import { ReservationPanelComponent } from './reservation-panel/reservation-panel.component';
 
 export const routes: Routes = [
-  { path: '', component: RegisterPanelComponent },
   { path: 'dashboard', component: ReservationDashboardComponent },
-  { path: 'reservation', component: ReservationPanelComponent }
+  { path: 'reservation', component: ReservationPanelComponent },
+  { path: '', component: RegisterPanelComponent },
 ];
