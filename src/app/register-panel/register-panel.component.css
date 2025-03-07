@@ -1,4 +1,7 @@
-
+body {
+  display: flex;
+  flex-direction: column;
+}
 
 #Rejestracja{
     width: 400px; 
@@ -11,4 +14,16 @@
   float: left;
   font-family: 'Times New Roman';
   text-align: left;
+}
+
+.btn {
+  width: 200px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
