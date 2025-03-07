@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ParkingSpot } from '../models/parking-spot';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-park-spot-panel',
@@ -8,10 +9,14 @@ import { ParkingSpot } from '../models/parking-spot';
 })
 export class ParkSpotPanelComponent {
   @Input() spot: ParkingSpot = {id: 0, zone: 'A', floor: 1, number: 1, available: true};
-
+  
+  constructor(private router: Router) {}
+  
   ReserveSpot(spot: ParkingSpot) {
-    console.log(`Spot ${spot.id} reserved`);
+    console.log('Reserving spot: ' + spot.id);
+    this.router.navigate(['/reservation'], { queryParams: {spotId: spot.id} });
   }
+
   GetAvailabilityString(spot: ParkingSpot) {
     return spot.available ? 'occupied' : 'available';
   }
