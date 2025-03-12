@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register-panel',
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register-panel.component.css']
 })
 export class RegisterPanelComponent {
+
   user = {
     firstName: '',
     lastName: '',
