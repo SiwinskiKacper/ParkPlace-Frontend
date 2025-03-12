@@ -4,5 +4,5 @@ import { DisplayParkSpotsComponent } from './display-park-spots/display-park-spo
 
 export const routes: Routes = [
   { path: '', component: RegisterPanelComponent },
-  { path: 'reservation', component: DisplayParkSpotsComponent }
+  { path: 'reservation', component: DisplayParkSpotsComponent}
 ];

@@ -3,11 +3,11 @@ import { DisplayParkSpotsComponent } from './display-park-spots/display-park-spo
 import { RegisterPanelComponent } from './register-panel/register-panel.component';
 import { DOCUMENT } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { ParkingSpotsDataService } from './parking-spots-data.service';
+import { ParkSpotPanelComponent } from './park-spot-panel/park-spot-panel.component';
 
 @Component({
   selector: 'app-root',
-  imports: [DisplayParkSpotsComponent, RegisterPanelComponent, RouterModule, RouterOutlet],
+  imports: [DisplayParkSpotsComponent, RegisterPanelComponent, ParkSpotPanelComponent , RouterModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
   
