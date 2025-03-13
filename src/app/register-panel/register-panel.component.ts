@@ -17,4 +17,8 @@ export class RegisterPanelComponent {
   onSubmit() {
     this.router.navigate(['/dashboard']);
   }
+    
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
 }
