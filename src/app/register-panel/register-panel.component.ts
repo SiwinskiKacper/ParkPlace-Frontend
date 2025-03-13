@@ -1,33 +1,29 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms'; 
-import { ReactiveFormsModule } from '@angular/forms';  
-
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-register-panel',
-  standalone: true, 
   templateUrl: './register-panel.component.html',
-  styleUrls: ['./register-panel.component.css'],
-  imports: [ReactiveFormsModule]  
+  styleUrls: ['./register-panel.component.css']
 })
 export class RegisterPanelComponent {
-  registerForm: FormGroup;
 
-  constructor() {
-    this.registerForm = new FormGroup({
-      firstName: new FormControl('', [Validators.required]),
-      lastName: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      confirmPassword: new FormControl('', [Validators.required]),
-      terms: new FormControl(false, [Validators.requiredTrue]),
-    });
-  }
+  user = {
+    firstName: '',
+    lastName: '',
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  };
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit() {
-    if (this.registerForm.valid) {
-      console.log(this.registerForm.value);
-    } else {
-      console.log('Formularz jest nieprawidłowy');
-    }
+    if (!this.user.firstName || !this.user.lastName || !this.user.email || !this.user.password ) {
+      alert('Wszystkie pola są wymagane!');
+      return;
+  
+  }
   }
 }
