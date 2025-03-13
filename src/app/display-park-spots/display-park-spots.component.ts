@@ -12,6 +12,7 @@ import { ParkingSpot } from '../models/parking-spot';
 export class DisplayParkSpotsComponent {
   parking_service: ParkingService = inject(ParkingService);
   parking_service_spot: ParkingSpot[] = [];
+  
   constructor() {
     this.parking_service.getAllParkingSpots().subscribe((data) => {
       this.parking_service_spot = data;
