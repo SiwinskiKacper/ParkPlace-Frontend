@@ -14,9 +14,19 @@ body {
     max-width: 1200px;
   }
 
-  .parking-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+  .error-message {
+    color: black;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
     margin-top: 20px;
   }
+  
+  .parking-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+  }
+  

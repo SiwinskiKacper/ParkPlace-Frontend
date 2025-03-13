@@ -1,26 +1,68 @@
-import { Component, inject } from '@angular/core';
-import { DisplayParkSpotsComponent } from '../display-park-spots/display-park-spots.component';
+import { Component, inject, OnInit } from '@angular/core';
 import { NavbarPanelComponent } from '../navbar-panel/navbar-panel.component';
-import { SideBarComponent } from '../side-bar/side-bar.component';
 import { FooterComponent } from '../footer/footer.component';
-import { ParkingService } from '../parking.service';
+import { SideBarComponent } from '../side-bar/side-bar.component';
 import { ParkingSpot } from '../models/parking-spot';
+import { ParkingService } from '../parking.service';
 import { ParkSpotHistoryPanelComponent } from '../park-spot-history-panel/park-spot-history-panel.component';
 
 @Component({
   selector: 'app-reservation-history-panel',
-  imports: [NavbarPanelComponent, SideBarComponent, 
-    FooterComponent, ParkSpotHistoryPanelComponent],
   templateUrl: './reservation-history-panel.component.html',
-  styleUrl: './reservation-history-panel.component.css'
+  styleUrls: ['./reservation-history-panel.component.css'],
+  standalone: true,
+  imports: [NavbarPanelComponent, SideBarComponent, FooterComponent, ]
 })
-export class ReservationHistoryPanelComponent {
-  parking_service: ParkingService = inject(ParkingService);
-  parking_service_spots: ParkingSpot[] = [];
+export class ReservationHistoryPanelComponent implements OnInit {
+  parkingService = inject(ParkingService);
+  parkingSpots: ParkingSpot[] = [];
+
+  constructor() {}
+
+  ngOnInit(): void {
+    this.fetchReservedSpots();
+  }
+
   
-  constructor() {
-    this.parking_service.getUsersReservedSpots().subscribe((data) => {
-      this.parking_service_spots = data;
+
+  fetchReservedSpots(): void {
+    this.parkingService.getUsersReservedSpots().subscribe({
+      next: (data) => {
+        this.parkingSpots = data;
+        this.renderSpots();
+      },
+      error: (err) => {
+        console.error('Error fetching reserved spots:', err);
+        this.renderError();
+      }
     });
+  }
+
+  renderSpots(): void {
+    const container = document.getElementById('historyContainer');
+    if (!container) return;
+
+    container.innerHTML = ''; 
+
+    if (this.parkingSpots.length === 0) {
+      container.innerHTML = '<p class="text-center">No history reservation.</p>';
+      return;
+    }
+
+    this.parkingSpots.forEach((spot) => {
+      const spotElement = document.createElement('div');
+      spotElement.classList.add('reservation-item');
+      spotElement.innerHTML = `
+        <h3>Miejsce: ${spot.id}</h3>
+      `;
+      container.appendChild(spotElement);
+    });
+  }
+
+  renderError(): void {
+    const container = document.getElementById('historyContainer');
+    if (container) {
+      container.innerHTML = '<p class="text-danger text-center">Failed to download reservation history.</p>';
+    }
   }
 }
