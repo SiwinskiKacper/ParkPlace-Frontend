@@ -1,25 +1,18 @@
 <app-navbar-panel></app-navbar-panel>
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="flex-shrink-0 sticky p-3 bg-white" style="width: 120px;">
-            <app-side-bar></app-side-bar>
-        </div>
-
-        <div class="col">
-            
-            <div class="container">
-                <h1 style="text-align: center;">Parking Spots</h1>
-                <div class="parking-grid">
-                    @for (spot of parking_service_spots; track spot)
-                    {
-                        <app-park-spot-history-panel [spot]="spot"></app-park-spot-history-panel>
-                    }
-                </div>
-            </div>
-
-        </div>
+  <div class="row">
+    <div class="flex-shrink-0 sticky p-3 bg-white" style="width: 120px;">
+      <app-side-bar></app-side-bar>
     </div>
+
+    <div class="col">
+      <div class="container">
+        <h1 style="text-align: center;">History of reservations</h1>
+        <div id="historyContainer" class="parking-grid"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <app-footer></app-footer>
