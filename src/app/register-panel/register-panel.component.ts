@@ -20,10 +20,9 @@ export class RegisterPanelComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit() {
-    if (!this.user.firstName || !this.user.lastName || !this.user.email || !this.user.password ) {
-      alert('Wszystkie pola są wymagane!');
-      return;
-  
+    this.router.navigate(['/reservation']);
+    
+    }
+      
   }
-  }
-}
+
