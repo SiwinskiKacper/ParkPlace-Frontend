@@ -7,15 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:4200/api/auth'; 
-
-  constructor(private http: HttpClient) {}
-
-  register(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, userData);
-    
+  register(user: { firstName: string; lastName: string; username: string; email: string; password: string; confirmPassword: string; }) {
+    throw new Error('Method not implemented.');
   }
-  isAuthenticated(): boolean {
-    return !!localStorage.getItem('token');
-  }
+
 }

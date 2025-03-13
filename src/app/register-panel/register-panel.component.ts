@@ -1,44 +1,33 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';  
 
 @Component({
   selector: 'app-register-panel',
+  standalone: true, 
   templateUrl: './register-panel.component.html',
-  styleUrls: ['./register-panel.component.css']
+  styleUrls: ['./register-panel.component.css'],
+  imports: [ReactiveFormsModule]  
 })
 export class RegisterPanelComponent {
+  registerForm: FormGroup;
 
-  user = {
-    firstName: '',
-    lastName: '',
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  };
-
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor() {
+    this.registerForm = new FormGroup({
+      firstName: new FormControl('', [Validators.required]),
+      lastName: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      confirmPassword: new FormControl('', [Validators.required]),
+      terms: new FormControl(false, [Validators.requiredTrue]),
+    });
+  }
 
   onSubmit() {
-    if (!this.user.firstName || !this.user.lastName || !this.user.email || !this.user.password || !this.user.confirmPassword) {
-      alert('Wszystkie pola są wymagane!');
-      return;
+    if (this.registerForm.valid) {
+      console.log(this.registerForm.value);
+    } else {
+      console.log('Formularz jest nieprawidłowy');
     }
-
-    if (this.user.password !== this.user.confirmPassword) {
-      alert('Hasła nie są zgodne!');
-      return;
-    }
-
-    this.authService.register(this.user).subscribe({
-      next: () => {
-        alert('Rejestracja udana!');
-        this.router.navigate(['/reservation']); 
-      },
-      error: (err) => {
-        alert('Błąd rejestracji: ' + err.error.message);
-      }
-    });
   }
 }

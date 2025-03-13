@@ -1,27 +1,37 @@
 
-<form >
-  <div id="Rejestracja">
-<h2>Rejestracja:</h2>
-  
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow p-4" style="width: 350px;">
+    <div class="text-center">
       
-        <label for="firstname">Imie:</label><br>
-          <input type="text" id="firstname" name="firstname" ><br>
-          <br><label for="lastname">Nazwisko:</label><br>
-          <input type="text" id="lastname" name="lastname" ><br>
-      
-          <br><label for="username">Nazwa użytkownika:</label><br>
-          <input type="text" id="username" name="username" ><br>
-          
-      
-         <br> <label for="email">E-mail:</label><br>
-          <input type="email" id="email" name="email"><br>
-    
-          <br><label for="password">Hasło:</label><br>
-          <input type="password" id="password" name="password" ><br>
-          <br><label for="confirmPassword">Powtórz hasło:</label><br>
-          <input type="password" id="confirmPassword" name="confirmPassword" ><br>
-     
-          <br><button (click)="onSubmit()">Zarejestruj</button>
-        
-        </div>
-  </form>
+    </div>
+    <h4 class="text-center mt-3"> Rejestracja</h4>
+    <form>
+      <div class="mb-3">
+        <label for="firstName" class="form-label">Imie:</label>
+        <input type="text" class="form-control" id="firstName" placeholder="Wpisz Imie">
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Nazwisko:</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Wpisz Nazwisko">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Adres Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Wpisz Email">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Hasło:</label>
+        <input type="password" class="form-control" id="password" placeholder="Wpisz Hasło">
+      </div>
+      <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Potwierdź Hasło:</label>
+        <input type="password" class="form-control" id="confirmPassword" placeholder="Powtórz Hasło">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="terms">
+        <label class="form-check-label" for="terms">Akceptuje warunki i zasady</label>
+      </div>
+      <button  class="btn btn-primary w-100" (click)="onSubmit()" >Zarejestruj sie</button>
+    </form>
+    <p class="text-center mt-3 small">© 2024</p>
+  </div>
+</div>
