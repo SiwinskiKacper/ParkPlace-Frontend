@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-register-panel',
@@ -7,18 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./register-panel.component.css']
 })
 export class RegisterPanelComponent {
-  username: string = '';
-  password: string = '';
-  imie: string = '';
-  nazwisko: string = '';
-  email: string = '';
-  constructor(private router: Router) {}
+  user = {
+    firstName: '',
+    lastName: '',
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  };
+
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit() {
-    this.router.navigate(['/dashboard']);
-  }
-    
-  goToLogin() {
     this.router.navigate(['/login']);
+    }
   }
-}
