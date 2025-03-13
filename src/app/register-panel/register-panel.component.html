@@ -1,37 +1,36 @@
-
+<html lang="pl">
 <div class="container d-flex justify-content-center align-items-center vh-100">
   <div class="card shadow p-4" style="width: 350px;">
-    <div class="text-center">
-      
-    </div>
-    <h4 class="text-center mt-3"> Rejestracja</h4>
+    <div class="text-center"></div>
+    <h4 class="text-center mt-3">Rejestracja</h4>
     <form>
       <div class="mb-3">
-        <label for="firstName" class="form-label">Imie:</label>
-        <input type="text" class="form-control" id="firstName" placeholder="Wpisz Imie">
+        <label for="firstName" class="form-label">Imię:</label>
+        <input type="text" class="form-control" id="firstName" placeholder="Wpisz imię" required>
       </div>
       <div class="mb-3">
         <label for="lastName" class="form-label">Nazwisko:</label>
-        <input type="text" class="form-control" id="lastName" placeholder="Wpisz Nazwisko">
+        <input type="text" class="form-control" id="lastName" placeholder="Wpisz nazwisko" required>
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Adres Email:</label>
-        <input type="email" class="form-control" id="email" placeholder="Wpisz Email">
+        <input type="email" class="form-control" id="email" placeholder="Wpisz email" required>
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Hasło:</label>
-        <input type="password" class="form-control" id="password" placeholder="Wpisz Hasło">
+        <input type="password" class="form-control" id="password" placeholder="Wpisz hasło" required>
       </div>
       <div class="mb-3">
         <label for="confirmPassword" class="form-label">Potwierdź Hasło:</label>
-        <input type="password" class="form-control" id="confirmPassword" placeholder="Powtórz Hasło">
+        <input type="password" class="form-control" id="confirmPassword" placeholder="Powtórz hasło" required>
       </div>
       <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="terms">
-        <label class="form-check-label" for="terms">Akceptuje warunki i zasady</label>
+        <input type="checkbox" class="form-check-input" id="terms" required>
+        <label class="form-check-label" for="terms">Akceptuję warunki i zasady</label>
       </div>
-      <button  class="btn btn-primary w-100" (click)="onSubmit()" >Zarejestruj sie</button>
+      <button class="btn btn-primary w-100" (click)="onSubmit()">Zarejestruj się</button>
     </form>
     <p class="text-center mt-3 small">© 2024</p>
   </div>
 </div>
+</html>
