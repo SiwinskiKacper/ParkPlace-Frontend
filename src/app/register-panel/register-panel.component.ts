@@ -21,24 +21,11 @@ export class RegisterPanelComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit() {
-    if (!this.user.firstName || !this.user.lastName || !this.user.email || !this.user.password || !this.user.confirmPassword) {
-      alert('Wszystkie pola są wymagane!');
-      return;
-    }
-
-    if (this.user.password !== this.user.confirmPassword) {
-      alert('Hasła nie są zgodne!');
-      return;
-    }
-
-    this.authService.register(this.user).subscribe({
-      next: () => {
-        alert('Rejestracja udana!');
+    
         this.router.navigate(['/reservation']); 
-      },
-      error: (err) => {
-        alert('Błąd rejestracji: ' + err.error.message);
+      
+        
       }
-    });
-  }
-}
+    };
+  
+
