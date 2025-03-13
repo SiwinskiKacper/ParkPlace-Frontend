@@ -1,83 +1,15 @@
-<nav class="navbar navbar-light sticky-top bg-light flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
-    <input class="form-control form-control-light w-100" type="text"
-        placeholder="Search spot" aria-label="Search">
-    <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
-        </li>
-    </ul>
-</nav>
+<app-navbar-panel></app-navbar-panel>
 
 <div class="container-fluid">
     <div class="row">
-        <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-            <a href="/"
-                class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-                <svg class="bi pe-none me-2" width="30" height="24">
-                    <use xlink:href="#bootstrap"></use>
-                </svg>
-                <span class="fs-5 fw-semibold">Collapsible</span>
-            </a>
-            <ul class="list-unstyled ps-0">
-                <li class="mb-1">
-                    <button
-                        class="btn btn-toggle d-inline-flex align-items-center rounded border-0"
-                        data-bs-toggle="collapse" data-bs-target="#home-collapse"
-                        aria-expanded="true">
-                        Home
-                    </button>
-                    <div class="collapse show" id="home-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#"
-                                    class="link-dark d-inline-flex text-decoration-none rounded">
-                                    My reservations</a>
-                            </li>
-                            <li><a href="#"
-                                    class="link-dark d-inline-flex text-decoration-none rounded">
-                                    Reservations history</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button
-                        class="btn btn-toggle d-inline-flex align-items-center rounded border-0"
-                        data-bs-toggle="collapse" data-bs-target="#my-reservations-collapse"
-                        aria-expanded="true">
-                        My reservations
-                    </button>
-                    <div class="collapse show" id="my-reservations-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#"
-                                    class="link-dark d-inline-flex text-decoration-none rounded">
-                                    My reservations</a>
-                            </li>
-                            <li><a href="#"
-                                    class="link-dark d-inline-flex text-decoration-none rounded">
-                                    My reservations history</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+        <div class="flex-shrink-0 sticky p-3 bg-white" style="width: 120px;">
+            <app-side-bar></app-side-bar>
         </div>
 
         <div class="col">
             <!-- <app-display-park-spots></app-display-park-spots> -->
         </div>
+    </div>
+</div>
 
-        <div class="container">
-            <footer
-                class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                <div class="col-md-4 d-flex align-items-center">
-                    <a href="/"
-                        class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                        <svg class="bi" width="30" height="24">
-                            <use xlink:href="#bootstrap"></use>
-                        </svg>
-                    </a>
-                    <span class="mb-3 mb-md-0 text-muted">© 1735 GlobalLodzik, Inc</span>
-                </div>
-            </footer>
-        </div>
+<app-footer></app-footer>

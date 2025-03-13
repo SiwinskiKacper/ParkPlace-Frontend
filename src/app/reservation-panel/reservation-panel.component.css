@@ -1,0 +1,15 @@
+.content {
+    text-align: center;
+    width: 75%;
+    margin: auto auto;
+ }
+ .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
