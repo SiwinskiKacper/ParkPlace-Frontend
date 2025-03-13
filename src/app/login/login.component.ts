@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   loginObj: any = {
-    email: '',
+    login: '',
     password: ''
   }
 
@@ -24,12 +24,19 @@ export class LoginComponent {
               private http: HttpClient) {}
 
   onLogin() {
-    this.http.post("https://localhost:7083/api/Parking/login",this.loginObj).subscribe((res:any)=>{
-      localStorage.setItem("angular19user",res.data.UserId)
+    //this.http.post<any>("https://localhost:7083/api/Parking/login",this.loginObj).subscribe(res=>{
+    //  this.router.navigate(["/dashboard"])
+    //}, error => {
+    //  alert("Wrong credentials")
+    //})
+
+    if (this.loginObj.email == "admin@admin.com" && this.loginObj.password == "12345678") {
       this.router.navigate(["/dashboard"])
-    }, error => {
+    }
+    else {
       alert("Wrong credentials")
-    })
+    }
+
   }
 
 }
